@@ -131,6 +131,7 @@ In this experiment, I used Matlab to Apply logistic regression model to make cla
 $w^{new} = (\Phi^{T}R\Phi)^{-1} \{ R \Phi w^{old} - (Y - T) \}$
 
 \end{center}
+$\Phi$ is the design matrix of the data set, and $R$ is the diagonal matrix with the elements of $p_{i}(1 - p_{i})$. $Y$ is the response variables and $T$ is the target code.\\
 The central part of the function is shown below:
 \begin{lstlisting}  
 while(abs(sum(w_new - w)) > epsilon & counts <= maxiter)
