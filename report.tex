@@ -1,0 +1,182 @@
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage{fontspec,xltxtra,xunicode}      %可使用系统自带字体
+%\usepackage{}
+
+\usepackage{setspace}    %使用行间距宏包
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{indentfirst}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{abstract}
+\usepackage[slantfont, boldfont]{xeCJK}
+\usepackage[colorlinks,linkcolor=black,anchorcolor=black,citecolor=black]{hyperref}
+\usepackage{titlesec}
+\usepackage{latexsym}
+\usepackage{amsbsy}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tocvsec2}
+\usepackage{longtable}
+\usepackage{booktabs}                % 用于表格中加下划线
+\usepackage{fancyhdr}                % 页眉页脚
+\usepackage{makeidx}                 % 建立索引
+\usepackage{bbding}                  % 一些特殊符号
+\usepackage{cite}                    % 支持引用
+\usepackage{multirow}                %使用多栏宏包
+\setlength{\skip\footins}{0.5cm}     % 脚注与正文的距离
+
+\usepackage{listings}
+
+
+
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}  %设置上标引用
+\geometry{top=1.2in,bottom=1.2in,left=1.2in,right=1in}  %设置页边距
+\defaultfontfeatures{Mapping=tex-text}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt   %设置文章内自动换行
+%\setlength{\parindent}{2em}  %设定首行缩进
+
+%中文字体设置
+\setCJKmainfont[BoldFont=Adobe Heiti Std,ItalicFont=Adobe Kaiti Std]{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{Adobe Fangsong Std}
+ 
+\setCJKfamilyfont{zhsong}{Adobe Song Std}
+\setCJKfamilyfont{zhhei}{Adobe Heiti Std}
+\setCJKfamilyfont{zhfs}{Adobe Fangsong Std}
+\setCJKfamilyfont{zhkai}{Adobe Kaiti Std}
+\setCJKfamilyfont{zhli}{LiSu}
+\setCJKfamilyfont{zhyou}{YouYuan}
+ 
+\newcommand*{\songti}{\CJKfamily{zhsong}} % 宋体
+\newcommand*{\heiti}{\CJKfamily{zhhei}}   % 黑体
+\newcommand*{\kaishu}{\CJKfamily{zhkai}}  % 楷书
+\newcommand*{\fangsong}{\CJKfamily{zhfs}} % 仿宋
+\newcommand*{\lishu}{\CJKfamily{zhli}}    % 隶书
+\newcommand*{\youyuan}{\CJKfamily{zhyou}} % 幼圆
+
+%英文字体设置
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Consolas}
+
+%设置字体大小
+\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}      %初号字体
+\newcommand{\xiaochu}{\fontsize{36pt}{\baselineskip}\selectfont}  %小初号字体
+\newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}       %一号字体
+\newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}       %二号字体
+\newcommand{\xiaoer}{\fontsize{18pt}{\baselineskip}\selectfont}   %小二号字体
+\newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}   %三号字体
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}       %四号字体
+\newcommand{\xiaosi}{\fontsize{12pt}{\baselineskip}\selectfont}   %小四号字体
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}     %五号字体
+\newcommand{\xiaowu}{\fontsize{9pt}{\baselineskip}\selectfont}    %小五号字体
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}   %六号字体
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}     %七号字体
+
+%更新目录指令
+\renewcommand{\contentsname}{ \centerline {\heiti \sanhao{目\quad 录}}}
+\renewcommand{\refname}{\centerline {\heiti \xiaosi{参考文献}}}
+
+
+\lstset{ %  
+extendedchars=false,            % Shutdown no-ASCII compatible  
+language=Matlab,                % choose the language of the code  
+basicstyle=\footnotesize\tt,    % the size of the fonts that are used for the code  
+tabsize=3,                            % sets default tabsize to 3 spaces  
+numbers=left,                   % where to put the line-numbers  
+numberstyle=\tiny,              % the size of the fonts that are used for the line-numbers  
+stepnumber=1,                   % the step between two line-numbers. If it's 1 each line  
+                                % will be numbered  
+numbersep=5pt,                  % how far the line-numbers are from the code   %  
+keywordstyle=\color[rgb]{0,0,1},                % keywords  
+commentstyle=\color[rgb]{0.133,0.545,0.133},    % comments  
+stringstyle=\color[rgb]{0.627,0.126,0.941},      % strings  
+backgroundcolor=\color{white}, % choose the background color. You must add \usepackage{color}  
+showspaces=false,               % show spaces adding particular underscores  
+showstringspaces=false,         % underline spaces within strings  
+showtabs=false,                 % show tabs within strings adding particular underscores  
+frame=single,                 % adds a frame around the code  
+captionpos=b,                   % sets the caption-position to bottom  
+breaklines=true,                % sets automatic line breaking  
+breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace  
+title=\lstname,                 % show the filename of files included with \lstinputlisting;  
+                                % also try caption instead of title  
+mathescape=true,escapechar=?    % escape to latex with ?..?  
+escapeinside={\%*}{*)},         % if you want to add a comment within your code  
+%columns=fixed,                  % nice spacing  
+%morestring=[m]',                % strings  
+%morekeywords={%,...},%          % if you want to add more keywords to the set  
+%    break,case,catch,continue,elseif,else,end,for,function,global,%  
+%    if,otherwise,persistent,return,switch,try,while,...},%  
+}  
+
+
+
+
+\title{Homework 4 Report}
+\author{Peide Li}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{Logistic Regression: Experiment}
+In this experiment, I used Matlab to Apply logistic regression model to make classification. In my logistic\_experiment function, the input is n, which denotes the size of the training set. That means I use first n rows of the training data to fit the model, and use the model to make prediction about the testing set. The function would return the weighted vector, the AUC value (used as accuracy of the model on the testing data set), the true positive rate and the false positive rate of the model when applying to the testing set. And when I apply Newton-Raphson iterative procedure in function logistic\_ train, I use the update formula 
+\begin{center}
+
+$w^{new} = (\Phi^{T}R\Phi)^{-1} \{ R \Phi w^{old} - (Y - T) \}$
+
+\end{center}
+The central part of the function is shown below:
+\begin{lstlisting}  
+while(abs(sum(w_new - w)) > epsilon & counts <= maxiter)
+   w = w_new;
+   z = phi * w;
+   angle = zeros(1, length(z));
+   for i = 1 : length(z)
+       angle(i) = 1/ (1 + exp(-z(i)));
+   end
+   R = diag(angle);
+   w_new = (phi' * R * phi)^(-1) * phi' * (R * phi * w - (z - t));
+   counts = counts + 1;
+    
+end
+
+weights = w_new;
+\end{lstlisting}  
+Then, I change the value of n from 200 to 2000, and compute the value of AUC as the accuracy of the model. The relation between the Accuracy of the model and the training set size is shown in the Figure 1
+\begin{center}
+\begin{figure}
+\includegraphics[width = 16cm, height = 8cm]{"Figure1.jpg"}
+\caption{AUC against training set size}
+\end{figure}
+\end{center}
+The figure shows that with larger training set, the prediction are more accurate.
+
+\quad \\
+
+\section{Sparse Logistic Regression: Experiment}
+In this experiment, I use logisticR function to build sparse logistic regression model with $l_1$ regularization term. I wrote a function that can return the accuracy (AUC) of the model when applying to the prediction of the testing set. And I change different regularization parameters from 0 to 1 to check the tendency of accuracy of the models and the features of the models with different parameters. The Figure 2 shows the outcome:
+\begin{center}
+\begin{figure}[H]
+\includegraphics[width = 17cm, height = 12cm]{"Figure2.jpg"}
+\caption{Accuracy \& Features against parameters}
+\end{figure}
+\end{center}
+The figure shows that the number of features is decreasing when the parameter is becoming larger. And when the parameter equal to about 0.1, the accuracy of the model is the largest.
+
+
+\quad
+\\
+
+
+
+The PDF report and the original Matlab code can be found at my github site:   
+\url{https://github.com/Kira233767/HomeWork-3.git}
+
+
+\end{document}
